@@ -11,6 +11,12 @@ public class UsersController {
      return "Get Request was sent";
     }
 
+    @GetMapping("/{userId}")
+    public String getUser(@PathVariable String userId){
+        return "Get Request was sent for the user " +userId;
+    }
+
+
     @PostMapping
     public String createUser(){
         return "Post Request was send ";
