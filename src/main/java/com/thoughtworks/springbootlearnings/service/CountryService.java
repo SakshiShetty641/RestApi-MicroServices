@@ -43,4 +43,19 @@ public class CountryService {
     }
 
 
+    public Country addCountry(Country country) {
+        country.setId(getMaxId());
+        countryMap.put(country.getId(), country);
+        return country;
+    }
+
+    public int getMaxId() {
+        int maxId = 0;
+        for (int id : countryMap.keySet()) {
+            if (maxId <= id)
+                maxId = id;
+        }
+        return maxId + 1;
+    }
+
 }

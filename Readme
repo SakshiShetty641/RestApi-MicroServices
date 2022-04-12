@@ -16,3 +16,10 @@ Get Mapping with Request Param
 
 
 Project -
+To get the list of countries, country by id, country by name
+
+@GetMapping("/getcountries") ==> localhost:8080/getcountries
+@GetMapping("/getcountries/{id}") ==> localhost:8080/getcountries/2
+@GetMapping("/getcountries/countryName") ==> localhost:8080/getcountries/countryName?name=India
+
+* To add a new country while adding the id should automatically generate based on countryName and capital
