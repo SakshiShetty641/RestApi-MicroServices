@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 public class UsersController {
 
     @GetMapping
-    public String getUsers(){
-     return "Get Request was sent";
+    public String getUsers(@RequestParam(value = "page") int pageno, @RequestParam(value = "limit") int limit){
+     return "Get Request was sent with pageno as : " +pageno + " and limit  as : " +limit;
     }
 
     @GetMapping("/{userId}")

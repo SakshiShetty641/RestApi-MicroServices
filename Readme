@@ -1,0 +1,18 @@
+Get Mapping with path variable
+@GetMapping("/{userId}")
+    public String getUser(@PathVariable String userId){
+        return "Get Request was sent for the user " +userId;
+    }
+ ====> localhost:8080/users/2
+
+
+Get Mapping with Request Param
+  @GetMapping
+     public String getUsers(@RequestParam(value = "page") int pageno, @RequestParam(value = "limit") int limit){
+      return "Get Request was sent with pageno as : " +pageno + " and limit  as : " +limit;
+     }
+    =====> localhost:8080/users?page=1&limit=50
+
+
+
+Project -
