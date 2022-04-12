@@ -23,3 +23,8 @@ To get the list of countries, country by id, country by name
 @GetMapping("/getcountries/countryName") ==> localhost:8080/getcountries/countryName?name=India
 
 * To add a new country while adding the id should automatically generate based on countryName and capital
+ @PostMapping("/addcountries") ==> localhost:8080/addcountries
+ @PutMapping("/updateCountry") ==> localhost:8080/updateCountry
+
+* To delete a country from the list
+@DeleteMapping("/deleteCountry/{id}") ==> localhost:8080/deleteCountry/4

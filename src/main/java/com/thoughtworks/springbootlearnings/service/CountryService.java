@@ -1,5 +1,6 @@
 package com.thoughtworks.springbootlearnings.service;
 
+import com.thoughtworks.springbootlearnings.controller.Response;
 import com.thoughtworks.springbootlearnings.entity.Country;
 import org.springframework.stereotype.Component;
 
@@ -56,6 +57,20 @@ public class CountryService {
                 maxId = id;
         }
         return maxId + 1;
+    }
+
+    public Country updateCountry(Country country){
+        if(country.getId()>0)
+            countryMap.put(country.getId(), country);
+        return country;
+    }
+
+    public Response deleteCountry(int id){
+        countryMap.remove(id);
+        Response res = new Response();
+        res.setId(id);
+        res.setMessage("Country deleted successfully.......");
+        return res;
     }
 
 }

@@ -33,4 +33,14 @@ public class CountryController {
         return countryService.addCountry(country);
     }
 
+    @PutMapping("/updateCountry")
+    public Country updateCountry(@RequestBody Country country) {
+        return countryService.updateCountry(country);
+    }
+
+    @DeleteMapping("/deleteCountry/{id}")
+    public Response deleteCountry(@PathVariable int id){
+        return countryService.deleteCountry(id);
+    }
+
 }
