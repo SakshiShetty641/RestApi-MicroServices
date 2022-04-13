@@ -1,38 +1,19 @@
 package com.thoughtworks.springbootlearnings.entity;
 
+import lombok.Data;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+@Data
 public class Country {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     int id;
     String countryName;
     String countryCapital;
-
-    public Country(int id, String countryName, String countryCapital) {
-        this.id = id;
-        this.countryName = countryName;
-        this.countryCapital = countryCapital;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCountryName() {
-        return countryName;
-    }
-
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
-    }
-
-    public String getCountryCapital() {
-        return countryCapital;
-    }
-
-    public void setCountryCapital(String countryCapital) {
-        this.countryCapital = countryCapital;
-    }
 }
